@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>My IPTV Player</title>
+    <title>IPTV Player</title>
     <style>
         body {
             margin: 0;
@@ -20,21 +20,26 @@
     </style>
 </head>
 <body>
-    <!-- শুধু একটি ভিডিও প্লেয়ার - কোন চ্যানেল লিস্ট নেই, কোন টেক্সট নেই -->
-    <video id="player" controls>
+    <video id="player" controls autoplay>
         <source src="" type="application/x-mpegURL">
-        আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
     </video>
-
     <script>
-        // প্লেয়ারে কিছু লোড করবে না - শুধু ফাঁকা থাকবে
-        const video = document.getElementById('player');
+        // ইউজার এজেন্ট চেক করে VLC বা IPTV অ্যাপ কিনা
+        const isVLC = navigator.userAgent.toLowerCase().includes('vlc');
         
-        // কোন ভিডিও লোড করবে না
-        video.addEventListener('loadstart', (e) => {
-            e.preventDefault();
-            return false;
-        });
+        if (!isVLC) {
+            // ব্রাউজার হলে - শুধু ফাঁকা প্লেয়ার দেখাবে
+            const video = document.getElementById('player');
+            video.style.display = 'block';
+            // কোন ভিডিও লোড করবে না
+            video.addEventListener('loadstart', (e) => {
+                e.preventDefault();
+                return false;
+            });
+        } else {
+            // VLC হলে - আসল m3u ফাইল লোড করবে
+            window.location.href = 'index.m3u';
+        }
     </script>
 </body>
 </html>
