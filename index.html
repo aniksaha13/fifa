@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toffee IPTV Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        h2 {
+            color: #333;
+        }
+        video {
+            width: 100%;
+            background: black;
+            border-radius: 8px;
+        }
+        .channel-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .channel-item {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .channel-item:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .current-channel {
+            margin: 10px 0;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>📺 Toffee IPTV Player</h2>
+    <div class="current-channel" id="currentChannel">🔴 কোন চ্যানেল নির্বাচন করা হয়নি</div>
+    <video id="videoPlayer" controls>
+        আপনার ব্রাউজার ভিডিও সাপোর্ট করে না
+    </video>
+    <h3>📡 চ্যানেল লিস্ট (ক্লিক করে দেখুন)</h3>
+    <div class="channel-list" id="channelList"></div>
+
+    <script>
+        const m3uUrl = 'https://raw.githubusercontent.com/BINOD-XD/Toffee-Auto-Update-Playlist/refs/heads/main/toffee_NS_Player.m3u';
+        const video = document.getElementById('videoPlayer');
+        const channelListDiv = document.getElementById('channelList');
+        const currentChannelSpan = document.getElementById('currentChannel');
+
+        fetch(m3uUrl)
+            .then(response => response.text())
+            .then(data => {
+                const lines = data.split('\n');
+                let channels = [];
+                
+                for (let i = 0; i < lines.length; i++) {
+                    let line = lines[i].trim();
+                    if (line.startsWith('#EXTINF:')) {
+                        let nameMatch = line.match(/,([^,]+)$/);
+                        let name = nameMatch ? nameMatch[1] : 'Unknown';
+                        let url = lines[++i] ? lines[i].trim() : '';
+                        if (url && url.startsWith('http')) {
+                            channels.push({ name: name, url: url });
+                        }
+                    }
+                }
+                
+                if (channels.length === 0) {
+                    channelListDiv.innerHTML = '<p>কোন চ্যানেল পাওয়া যায়নি</p>';
+                    return;
+                }
+                
+                channels.forEach(channel => {
+                    let div = document.createElement('div');
+                    div.className = 'channel-item';
+                    div.textContent = channel.name;
+                    div.onclick = () => {
+                        video.src = channel.url;
+                        video.play().catch(e => console.log('Auto-play blocked:', e));
+                        currentChannelSpan.innerHTML = `🎬 চলছে: ${channel.name}`;
+                        currentChannelSpan.style.background = "#28a745";
+                    };
+                    channelListDiv.appendChild(div);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                channelListDiv.innerHTML = '<p style="color:red;">প্লেলিস্ট লোড করতে সমস্যা হয়েছে</p>';
+            });
+    </script>
+</body>
+</html>
