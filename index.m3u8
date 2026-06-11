@@ -29,6 +29,31 @@ https://owrcovcrpy.gpcdn.net/bpk-tv/1702/output/index.m3u8
 http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
 
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+https://edge2.roarzone.net:8447/roarzone/edge1/4/index.ll.m3u8?token=dc7193de98937e3a89d1024781037544bf3b3309-9f448017cef4c1cb8aff940e822b278f-1781198341-1781187541
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+https://edge2.roarzone.net:8447/roarzone/edge3/sony_sports_5_hd/tracks-a1/index.ll.m3u8?token=61d8bd452ed63a3f53aa23ea777316e62d50368f-cd6267c39262040f7cf389ed5b4082ec-1781198558-1781187758&_HLS_msn=6711&_HLS_part=0
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+https://edge2.roarzone.net:8447/roarzone/edge3/sony_sports_2_hd/tracks-v1/index.ll.m3u8?token=0dd2a797b392b2e1d10232e26a6eaac183647e1c-c645dd1cc62995827589884fd3182334-1781198643-1781187843
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+https://edge2.roarzone.net:8447/roarzone/edge3/euro_sports_hd/tracks-a1/index.ll.m3u8?token=77fc41e383f374dc2dc53bf6fafc2df444415cce-eeb8848f65c53c3fff962e1ea57205b9-1781198716-1781187916&_HLS_msn=6823&_HLS_part=0
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+https://edge2.roarzone.net:8447/roarzone/edge5/a-sports/tracks-a1/index.ll.m3u8?token=ac482527a4b8b57f187468f1e5017a627460f8a7-21a56713a84af63a6b029a92a721adf5-1781198801-1781188001
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
+http://103.151.60.204/T-Sports/tracks-v1a1/mono.m3u8
+
+
+
+
+
+#EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
 https://tvsen7.aynaott.com/tsports-hd/tracks-v1a1/mono.ts.m3u8
 #EXTINF:-1 tvg-id="" tvg-logo="https://i.imgur.com/LKtKtT9.jpeg" group-title="Sports",T Sports HD 1 📺
 https://playztv-apps.pages.dev/tsports/index.m3u8
